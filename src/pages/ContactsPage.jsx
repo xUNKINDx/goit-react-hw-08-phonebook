@@ -2,7 +2,7 @@ import ContactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
 import Contacts from 'components/Contacts/Contacts';
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'store/contacts/operation';
 import { selectIsLoading } from 'store/contacts/selector';
@@ -16,7 +16,7 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Contacts</title>
       </Helmet>
@@ -26,7 +26,7 @@ const ContactsPage = () => {
       <Filter />
       {isLoading && <p>Loading...</p>}
       <Contacts />
-    </>
+    </HelmetProvider>
   );
 };
 
