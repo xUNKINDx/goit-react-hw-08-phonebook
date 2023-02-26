@@ -17,9 +17,9 @@ const ContactsPage = () => {
 
   return (
     <>
-      {/* <Helmet> */}
+      <Helmet>
         <title>Contacts</title>
-      {/* </Helmet> */}
+      </Helmet>
       <h1 style={{ display: 'flex', justifyContent: 'center' }}>Phonebook</h1>
       <ContactForm />
       <h2 style={{ display: 'flex', justifyContent: 'center' }}>Contacts</h2>
